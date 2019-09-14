@@ -1,0 +1,6 @@
+# Project exclude paths
+/mail-api/target/
+/mail-app/target/
+/mail-core/target/
+/mail-rest-client/target/
+/mail-spi/target/

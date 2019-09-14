@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="#{email.activation.title}">Lodomaniak aktywacja konta</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="shortcut icon" href="${baseUrl}/favicon.ico" />
+</head>
+<body>
+<p th:text="#{email.activation.greeting(${user.username})}">
+    Drogi
+</p>
+<p th:text="#{email.activation.text1}">
+    Twoje konto na Lodomaniaku zostało stworzone, kliknij poniższy link aby je aktywować:
+</p>
+<p>
+    <a th:href="@{|${baseUrl}/account/activate?key=${user.activationKey}|}"
+       th:text="@{|${baseUrl}/account/activate?key=${user.activationKey}|}">Link aktywacyjny</a>
+</p>
+<p>
+    <span th:text="#{email.activation.text2}">Pozdrawiamy, </span>
+    <br/>
+    <em th:text="#{email.signature}">Zespół Lodomaniaka.</em>
+</p>
+</body>
+</html>
